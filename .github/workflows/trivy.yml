@@ -21,15 +21,6 @@ env:
   NAME: gfp
 
 jobs:
-  check:
-    name: Check
-    outputs:
-      build: ${{ steps.check.outputs.build }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
   trivy-repo:
     name: Trivy-Repo
     runs-on: ubuntu-18.04
