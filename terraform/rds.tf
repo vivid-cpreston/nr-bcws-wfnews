@@ -32,6 +32,8 @@ resource "aws_db_proxy" "wfnews_db_proxy" {
   auth {
     auth_scheme = "SECRETS"
     iam_auth    = "DISABLED"
+    secret_arn  = aws_secretsmanager_secret.wfnews_db_pw_secret.arn
+    username = aws_db_instance.wfnews_pgsqlDB.username
   }
 
   tags = local.common_tags
