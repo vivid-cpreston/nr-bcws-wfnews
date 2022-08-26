@@ -37,6 +37,9 @@ resource "aws_db_proxy" "wfnews_db_proxy" {
   }
 
   tags = local.common_tags
+  depends_on = [
+    aws_secretsmanager_secret.wfnews_db_pw_secret
+  ]
 }
 
 resource "aws_db_proxy_default_target_group" "wfnews_db_target_group" {
