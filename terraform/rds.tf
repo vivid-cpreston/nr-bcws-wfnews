@@ -27,7 +27,7 @@ resource "aws_db_proxy" "wfnews_db_proxy" {
   require_tls            = true
   role_arn               = data.aws_iam_role.wfnews_automation_role.arn
   vpc_security_group_ids = [data.aws_security_group.web.id, aws_security_group.wfnews_ecs_tasks.id]
-  vpc_subnet_ids         = [module.network.aws_subnet_ids.app.ids]
+  vpc_subnet_ids         = module.network.aws_subnet_ids.app.ids
 
   auth {
     auth_scheme = "SECRETS"
