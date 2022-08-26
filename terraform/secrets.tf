@@ -3,6 +3,6 @@ resource "aws_secretsmanager_secret" "wfnews_db_pw_secret" {
 }
 
 resource "aws_secretsmanager_secret_version" "wfnews_db_pw_secret_version" {
-    secret_id = aws_secretsmanager_secret.wfnews_db_secret
+    secret_id = aws_secretsmanager_secret.wfnews_db_pw_secret.id
     secret_string = var.db_pass
 }
