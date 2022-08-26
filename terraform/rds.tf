@@ -38,7 +38,7 @@ resource "aws_db_proxy" "wfnews_db_proxy" {
 }
 
 resource "aws_db_proxy_default_target_group" "wfnews_db_target_group" {
-  db_proxy_name = aws_db_proxy.wfnews_pgsqlDB_proxy.name
+  db_proxy_name = aws_db_proxy.wfnews_db_proxy.name
 }
 
 resource "aws_db_proxy_target" "wfnews_db_proxy_target" {
