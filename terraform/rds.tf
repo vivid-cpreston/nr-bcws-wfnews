@@ -18,7 +18,7 @@ resource "aws_db_instance" "wfnews_pgsqlDB"{
     tags = local.common_tags
     db_subnet_group_name = aws_db_subnet_group.wfnews_db_subnet_group.name
 }
-
+/*
 resource "aws_db_proxy" "wfnews_db_proxy" {
   name                   = "wfnews-db-proxy-${var.target_env}"
   debug_logging          = false
@@ -50,3 +50,4 @@ resource "aws_db_proxy_target" "wfnews_db_proxy_target" {
   db_proxy_name          = aws_db_proxy.wfnews_db_proxy.name
   target_group_name      = aws_db_proxy_default_target_group.wfnews_db_target_group.name
 }
+*/
