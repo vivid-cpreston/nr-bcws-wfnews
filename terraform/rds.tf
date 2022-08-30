@@ -4,7 +4,7 @@ resource "aws_db_subnet_group" "wfnews_db_subnet_group" {
   tags = local.common_tags
 }
 
-/* TODO: switch to postgresql-compatible aurora insance */
+/* TODO: switch to postgresql-compatible aurora instance */
 resource "aws_db_instance" "wfnews_pgsqlDB"{
     identifier = "wfnews${var.target_env}"
     engine = "postgres"
